@@ -1,2 +1,7 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Graphik";
+    src: url(../public/assets/fonts/Graphik-Medium-Trial.otf);
+}
+
