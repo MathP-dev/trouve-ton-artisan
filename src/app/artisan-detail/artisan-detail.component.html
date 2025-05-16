@@ -1,0 +1,97 @@
+<div class="container mx-auto p-4">
+  <div class="flex flex-col md:flex-row">
+    <!-- Détails de l'artisan -->
+    <div class="w-full md:w-1/2 p-4">
+      <img
+        [src]="artisan.img"
+        alt="{{ artisan.name }}"
+        class="w-full h-64 object-cover"
+      />
+      <h1 class="text-2xl font-bold mt-4">{{ artisan.name }}</h1>
+      <p class="text-gray-600">{{ artisan.specialty }}</p>
+      <div class="flex items-center mt-2">
+        @for (i of [1, 2, 3, 4, 5]; track i) {
+        <span class="text-yellow-500">{{ i <= artisan.note ? "★" : "☆" }}</span>
+        }
+      </div>
+      <p class="text-gray-700 mt-2">{{ artisan.location }}</p>
+      <div class="flex items-center mt-2">
+        <img
+          src="assets/images/icon-email.png"
+          alt="icon email"
+          class="w-5 h-5 mr-2"
+        />
+        <p class="text-gray-700">{{ artisan.email }}</p>
+      </div>
+      <div class="flex items-center mt-2">
+        <img
+          src="assets/images/icon-website.png"
+          alt="icon web"
+          class="w-5 h-5 mr-2"
+        />
+        <p class="text-gray-700">
+          <a
+            class="hover:text-blue-500"
+            [href]="artisan.website"
+            target="_blank"
+            >{{ artisan.website }}</a
+          >
+        </p>
+      </div>
+      <p class="text-gray-800 mt-4">{{ artisan.about }}</p>
+    </div>
+
+    <!-- Formulaire de contact -->
+    <div class="w-full md:w-1/2 p-4">
+      <h2 class="text-xl font-bold mb-4">Contactez-moi</h2>
+      <form>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+            Nom
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="name"
+            type="text"
+            placeholder="Votre nom"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+            Email
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email"
+            type="email"
+            placeholder="Votre email"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="message"
+          >
+            Message
+          </label>
+          <textarea
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="message"
+            placeholder="Votre message"
+            required
+          ></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+          >
+            Envoyer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

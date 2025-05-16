@@ -1,33 +1,72 @@
 <nav class="bg-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <div class="-ml-45">
-            <a href="#" class="flex items-center">
-                <img src="assets/images/Logo.png" alt="Logo Trouve ton artisan" class="h-32"/>
-            </a>
-        </div>
-
-        <!-- Barre de recherche -->
-        <form class="flex-grow mx-4 max-w-md" role="search"> 
-            <div class="flex">
-                <input class="w-full px-4 py-2 border rounded" type="search" placeholder="Rechercher un artisan" aria-label="Search" name="search">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded ml-2" type="submit">Rechercher</button>
-            </div>
-        </form>
-
-        <!-- Bouton pour le menu responsive -->
-        <button (click)="toggleMenu()" class="md:hidden focus:outline-none">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Liens de navigation -->
-        <div [class.hidden]="isMenuHidden" class="md:flex md:items-center">
-            <ul class="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-6">
-                <li><a href="#" class="text-gray-800 hover:text-blue-500 font-bold text-lg">Alimentation</a></li>
-                <li><a href="#" class="text-gray-800 hover:text-blue-500 font-bold text-lg">Fabrication</a></li>
-                <li><a href="#" class="text-gray-800 hover:text-blue-500 font-bold text-lg">Services</a></li>
-                <li><a href="#" class="text-gray-800 hover:text-blue-500 font-bold text-lg">Bâtiment</a></li>
-            </ul>
-        </div>
+  <div class="container mx-auto flex justify-between items-center">
+    <!-- Logo -->
+    <div class="-ml-45">
+      <a href="#" class="flex items-center">
+        <img
+          src="assets/images/Logo.png"
+          alt="Logo Trouve ton artisan"
+          class="h-32"
+        />
+      </a>
     </div>
+
+    <!-- Barre de recherche -->
+    <form class="flex-grow mx-4 max-w-md" role="search">
+      <div class="flex">
+        <input
+          class="w-full px-4 py-2 border rounded"
+          type="search"
+          placeholder="Rechercher un artisan"
+          aria-label="Search"
+          name="search"
+        />
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded ml-2"
+          type="submit"
+        >
+          Rechercher
+        </button>
+      </div>
+    </form>
+
+    <!-- Bouton pour le menu responsive -->
+    <button (click)="toggleMenu()" class="md:hidden focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Liens de navigation -->
+    <div [class.hidden]="isMenuHidden" class="md:flex md:items-center">
+      <ul class="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-6">
+        <li>
+          <a
+            [routerLink]="['/artisans', 'Alimentation']"
+            class="text-gray-800 hover:text-blue-500 font-bold text-lg"
+            >Alimentation</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/artisans', 'Fabrication']"
+            class="text-gray-800 hover:text-blue-500 font-bold text-lg"
+            >Fabrication</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/artisans', 'Services']"
+            class="text-gray-800 hover:text-blue-500 font-bold text-lg"
+            >Services</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['/artisans', 'Bâtiment']"
+            class="text-gray-800 hover:text-blue-500 font-bold text-lg"
+            >Bâtiment</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
