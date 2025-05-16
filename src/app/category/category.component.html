@@ -1,0 +1,34 @@
+<main class="flex-grow mx-4 md:mx-8 lg:mx-16 my-4">
+    <!-- Contenu principal de votre page -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      @for (artisan of artisans; track artisan.id) {
+      <div class="bg-white rounded-lg shadow-md overflow-hidden border-2 border-blue-500">
+        <img
+          [src]="artisan.img"
+          alt="{{ artisan.name }}"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-4">
+          <h2 class="text-xl font-semibold">{{ artisan.name }}</h2>
+          <p class="text-gray-600">{{ artisan.specialty }}</p>
+          <div class="flex items-center mt-2">
+            @for (i of [1, 2, 3, 4, 5]; track i) {
+              <span class="text-yellow-500">{{ i <= artisan.note ? '★' : '☆' }}</span>
+            }
+          </div>
+          <p class="text-gray-700 mt-2">{{ artisan.location }}</p>
+          <p class="text-gray-800 mt-4">{{ artisan.about }}</p>
+          <div class="mt-4 flex justify-center">
+            <button
+              class="bg-blue-500 text-white px-4 py-2 rounded ml-2 cursor-pointer"
+              type="button"
+              [routerLink]="['/artisan', artisan.id]"
+            >
+              Contacter
+            </button>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </main>
