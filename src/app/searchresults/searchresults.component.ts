@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-searchresults',
   imports: [CommonModule, RouterModule],
   templateUrl: './searchresults.component.html',
-  styleUrl: './searchresults.component.css'
+  styleUrl: './searchresults.component.css',
 })
 export class SearchresultsComponent implements OnInit, OnDestroy {
   searchResults: any[] = [];
@@ -17,9 +17,11 @@ export class SearchresultsComponent implements OnInit, OnDestroy {
   constructor(private searchService: SearchService) {}
 
   ngOnInit(): void {
-    this.searchSubscription = this.searchService.searchResults$.subscribe(results => {
-      this.searchResults = results;
-    });
+    this.searchSubscription = this.searchService.searchResults$.subscribe(
+      (results) => {
+        this.searchResults = results;
+      }
+    );
   }
 
   ngOnDestroy(): void {
@@ -27,5 +29,4 @@ export class SearchresultsComponent implements OnInit, OnDestroy {
       this.searchSubscription.unsubscribe();
     }
   }
-
 }

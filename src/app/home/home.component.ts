@@ -7,15 +7,15 @@ import { RouterModule } from '@angular/router';
   selector: 'app-home',
   imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-topArtisans: any[] = [];
+  topArtisans: any[] = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.dataService.getData().subscribe(data => {
+    this.dataService.getData().subscribe((data) => {
       this.topArtisans = data.sort((a, b) => b.note - a.note).slice(0, 3);
     });
   }
