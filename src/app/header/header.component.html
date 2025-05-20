@@ -13,23 +13,23 @@
 
     <!-- Barre de recherche -->
     <form class="flex-grow mx-4 max-w-md" role="search">
-  <div class="flex">
-    <input
-      class="w-full px-4 py-2 border rounded"
-      type="search"
-      placeholder="Rechercher un artisan"
-      aria-label="Search"
-      name="search"
-      (input)="onSearch($event)"
-    />
-    <button
-      class="bg-blue-500 text-white px-4 py-2 rounded ml-2"
-      type="submit"
-    >
-      Rechercher
-    </button>
-  </div>
-</form>
+      <div class="flex">
+        <input
+          class="w-full px-4 py-2 border rounded"
+          type="search"
+          placeholder="Rechercher un artisan"
+          aria-label="Search"
+          name="search"
+          (input)="onSearch($event)"
+        />
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded ml-2"
+          type="submit"
+        >
+          Rechercher
+        </button>
+      </div>
+    </form>
 
     <!-- Bouton pour le menu responsive -->
     <button (click)="toggleMenu()" class="md:hidden focus:outline-none">
