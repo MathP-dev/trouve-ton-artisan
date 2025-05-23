@@ -43,6 +43,7 @@ export class ArtisanDetailComponent implements OnInit {
     });
   }
 
+    // Email sending function with emailjs
   onSubmit() {
     if (this.contactForm.valid) {
       const formData = this.contactForm.value;
@@ -51,16 +52,15 @@ export class ArtisanDetailComponent implements OnInit {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message
+        // to_email: this.artisan.email // To send to artisan's email
       };
 
       this.EmailjsService.sendEmail(templateParams).then(
         (response) => {
-          console.log('SUCCESS!', response.status, response.text);
           alert('Email envoyé avec succès!');
           this.contactForm.reset();
         },
         (error) => {
-          console.log('FAILED...', error);
           alert('Échec de l\'envoi de l\'email.');
         }
       );
