@@ -24,6 +24,7 @@ export class SearchresultsComponent implements OnInit, OnDestroy {
     );
   }
 
+  // Function to clean up the subscription and prevent memory leaks
   ngOnDestroy(): void {
     if (this.searchSubscription) {
       this.searchSubscription.unsubscribe();

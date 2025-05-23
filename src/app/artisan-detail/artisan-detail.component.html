@@ -1,6 +1,6 @@
 <div class="container mx-auto p-4">
   <div class="flex flex-col md:flex-row">
-    <!-- Détails de l'artisan -->
+    <!-- Detailed artisan's card -->
     <div class="w-full md:w-1/2 p-4">
       <img
         [src]="artisan.img"
@@ -41,7 +41,7 @@
       <p class="text-gray-800 mt-4">{{ artisan.about }}</p>
     </div>
 
-    <!-- Formulaire de contact -->
+    <!-- Contact form -->
     <div class="w-full md:w-1/2 p-4">
       <h2 class="text-xl font-bold mb-4">Contactez-moi</h2>
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" #contactFormRef>
